@@ -1,0 +1,41 @@
+{
+  "name": "template-cdk-app",
+  "version": "0.1.0",
+  "bin": {
+    "template-cdk-app": "bin/template-cdk-app.js"
+  },
+  "scripts": {
+    "build": "run-s build:*",
+    "build:typeCheck": "tsc --noEmit",
+    "build:bundle": "node ./bundle.js",
+    "watch": "run-p watch:*",
+    "watch:typeCheck": "tsc --noEmit -w",
+    "watch:build": "node ./bundle.js watch",
+    "format": "run-s format:*",
+    "format:eslint": "eslint . --ext ts,js",
+    "format:prettier": "prettier --write \"**/*.{ts,js}\"",
+    "deploy:TemplateCdkAppStack":"cdk deploy TemplateCdkAppStack"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.108.0",
+    "@types/node": "10.17.27",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "aws-cdk": "1.108.0",
+    "esbuild": "^0.12.12",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-custom-alias": "^1.2.0",
+    "eslint-plugin-import": "^2.23.4",
+    "glob": "^7.1.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-lambda": "^1.110.1",
+    "@aws-cdk/core": "^1.110.1",
+    "dayjs": "^1.10.5"
+  }
+}
